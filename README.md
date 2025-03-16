@@ -15,12 +15,12 @@ This is a simple fun racing game built using python and the pygame library. The 
 1. Start the game bu running `main.py` file 
 
 2. Controls: 
-    i. Left Arrow Key: Moves the car to the left
-    ii. Right Arrow Key: Moves the car to the right side.
-    iii. P key - Pauses the game
-    iv. C key - Continue the game
-    v. R key - Restarts the game
-    vi. M key - Returns to the main menu
+i. Left Arrow Key: Moves the car to the left
+ii. Right Arrow Key: Moves the car to the right side.
+iii. P key - Pauses the game
+iv. C key - Continue the game
+v. R key - Restarts the game
+vi. M key - Returns to the main menu
 
 
 ## Installation
