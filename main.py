@@ -21,7 +21,7 @@ RED = (255, 0, 0 )
 YELLOW = (255, 255, 0)
 
 
-# game images
+#=====game images========
 bg = pygame.image.load("bg.png")
 bg = pygame.transform.scale(bg, (WIDTH, HEIGHT))
 maincar = pygame.image.load("car.png")
@@ -30,7 +30,8 @@ car2 = pygame.image.load("car2.png")
 car3 = pygame.image.load("car3.png")
 logo = pygame.image.load("logo.png")
 logo = pygame.transform.scale(logo, (400, 200))
-# variables of the game 
+
+# ======variables of the game======== 
 game_exit = False
 score_value = 0
 maincar_x, maincar_y = 290, 500
@@ -40,24 +41,25 @@ level = "Easy"
 game_pause = False
 game_over = False 
 
-# sound effects
+# --------sound effects-----
 pygame.mixer.music.load('background.mp3')
 crash_sound = pygame.mixer.Sound('car_crash.mp3')
 
 
-# enemy cars
-
+# ======enemy cars========
 enemy_cars = [
     {"image": car1, "x": random.randint(190, 493), "y": -200, "speed": speed},
     {"image": car2, "x": random.randint(190, 493), "y": -500, "speed": speed},
     {"image": car3, "x": random.randint(190, 493), "y": -800, "speed": speed},
 ]
 
-# game functions
+# =====game functions========
+ #display text 
 def display_text(text, font, color, x, y):
     text_surface = font.render(text, True, color)
     wn.blit(text_surface, (x, y))
 
+# ======display the menu =====
 def draw_menu():
     wn.fill(BLACK)
     display_text("NFC 2D Raing Game", font, WHITE, 300, 150)
@@ -66,6 +68,7 @@ def draw_menu():
     display_text("3. Exit", small_font, WHITE, 300, 300)
     pygame.display.update()
 
+# ======resets the game======
 def reset_game():
     global maincar_x, maincar_y, score_value, game_paused, game_over, enemy_cars, maincar_xchange
     maincar_x, maincar_y = 290, 400
@@ -81,6 +84,7 @@ def reset_game():
 
     pygame.mixer.music.play(-1)
 
+# =====function for cheking if you have hit an obstacle or enemy car=====
 def is_collision(maincar_x, maincar_y, car_x, car_y):
     distance = math.sqrt((maincar_x - car_x) ** 2 + (maincar_y - car_y) ** 2) 
     return distance < 50
@@ -113,7 +117,8 @@ def game():
         display_text("Press M for Menu", small_font,WHITE, 300, 450)
     pygame.display.update()
 
-    # game loop
+    
+    # ===game loop=====
 
 def main():
         global game_exit, maincar_x, maincar_y, maincar_xchange, game_paused, game_over, level, speed
@@ -184,7 +189,7 @@ def main():
 
 
                         
-                        # collition ch ecking..
+                        # collition checking..
 
                         for car in enemy_cars:
                             if is_collision(maincar_x, maincar_y, car["x"], car["y"]):
