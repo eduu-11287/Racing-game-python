@@ -1,0 +1,20 @@
+{
+    "levels": [
+        {
+            "name": "Level 1",
+            "obstacles": [
+                {"x": 300, "y": 200},
+                {"x": 500, "y": 300}
+            ],
+            "sound": "level1.wav"
+        },
+        {
+            "name": "Level 2",
+            "obstacles": [
+                {"x": 200, "y": 150},
+                {"x": 400, "y": 250}
+            ],
+            "sound": "level2.wav"
+        }
+    ]
+}
